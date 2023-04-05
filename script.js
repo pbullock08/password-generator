@@ -1,14 +1,14 @@
 // Assignment code here
 
-//code that leads to prompts when you click generate password
-document.querySelector("#generate").addEventListener("click", generatePassword);
+//code that leads to prompts when you click generate password???
+document.querySelector("button#generate.btn").addEventListener("click", generatePassword);
 
-function generatePassword (){
+function generatePassword () {
   //create variables that will randomly generate characters depending on the criteria
   var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var numerics = [1,2,3,4,5,6,7,8,9,0];
-  var symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_"];
+  var symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "?", "~"];
 
 var numofCharacters = parseInt(prompt("How many characters (between 8 and 128) should your password contain?"));
 
@@ -50,14 +50,13 @@ if (uppercasePrompt === false && lowercasePrompt === false && numericsPrompt=== 
 
 //generate password using a for loop that considers criteria and variable pool 
 var passwordCharacters = [].concat.apply([], characters);
-console.log (passwordCharacters);
 var password = [];
 
 for (var i=0; i < numofCharacters; i++) {
   password.push(passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)]);
   }
 
-return password;
+return password.join("");
 }
 
 //display password on the webpage
@@ -65,5 +64,3 @@ var password = generatePassword();
 var passwordText = document.querySelector("#password");
 
 passwordText.value = password;
-
-//need to get rid of commas??????/
