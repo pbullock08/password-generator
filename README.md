@@ -14,6 +14,7 @@ This webpage is designed to ask a series of prompts once the generate password b
 
 ## Credits
 
+N/A
 
 ## License
 
