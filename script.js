@@ -1,33 +1,38 @@
 // Assignment code here
 
-//code that leads to prompts when you click generate password???
+//allows code to start running when you click generate password
 document.querySelector("button#generate.btn").addEventListener("click", writePassword);
 
+//displays password on the webpage
+function writePassword () {
+var password = generatePassword();
+var passwordText = document.querySelector("#password");
+
+passwordText.value = password;
+}
+
+//code for prompts and random selection of characters
 function generatePassword() {
   //create variables that will randomly generate characters depending on the criteria
   var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var numerics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   var symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "?", "~"];
-
+  //prompt for # of characters 
   var numofCharacters = parseInt(prompt("How many characters (between 8 and 128) should your password contain?"));
 
   if (numofCharacters < 8 || numofCharacters > 128 === true) {
     alert("Your password must be between 8 and 128 characters.");
   } else {
-    //create prompts for types of characters
+    //prompts for types of characters
     var uppercasePrompt = confirm("Should your password include uppercase letters?");
     var lowercasePrompt = confirm("Should your password include lowercase letters?");
     var numericsPrompt = confirm("Should your password include numerical values?");
     var symbolsPrompt = confirm("Should your password include special characters?");
   }
-  //create if/else statement for selection of at least one type of character using or ||
+  //if statements for selection of at least one type of character
   if (uppercasePrompt === false && lowercasePrompt === false && numericsPrompt === false && symbolsPrompt === false) {
     alert("Your password must contain at lease one type of character.");
-    var uppercasePrompt = confirm("Should your password include uppercase letters?");
-    var lowercasePrompt = confirm("Should your password include lowercase letters?");
-    var numericsPrompt = confirm("Should your password include numerical values?");
-    var symbolsPrompt = confirm("Should your password include special characters?");
   } else {
     var characters = [];
 
@@ -57,12 +62,4 @@ function generatePassword() {
   }
 
   return password.join("");
-}
-
-//display password on the webpage
-function writePassword () {
-var password = generatePassword();
-var passwordText = document.querySelector("#password");
-
-passwordText.value = password;
 }
