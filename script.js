@@ -22,7 +22,7 @@ function generatePassword() {
   var numofCharacters = (prompt("How many characters (between 8 and 128) should your password contain?"));
 
   if (numofCharacters < 8 || numofCharacters > 128 || !Number.isInteger(+numofCharacters) === true) {
-    alert("Your password must be between 8 and 128 characters.");
+    alert("The number of characters must be an integer between 8 and 128.");
   } else {
     //prompts for types of characters
     var uppercasePrompt = confirm("Should your password include uppercase letters?");
