@@ -22,4 +22,4 @@ Please refer to the license in the repo.
 
 ## Deployed Application w/ Screenshot
 [Deployed Application](https://pbullock08.github.io/password-generator/)
-![image](./assets/images/pbullock08.github.io_password-generator_.png)
+![image](./assets/images/deployed-app.png)
