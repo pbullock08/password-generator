@@ -4,11 +4,11 @@
 document.querySelector("button#generate.btn").addEventListener("click", writePassword);
 
 //displays password on the webpage
-function writePassword () {
-var password = generatePassword();
-var passwordText = document.querySelector("#password");
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-passwordText.value = password;
+  passwordText.value = password;
 }
 
 //code for prompts and random selection of characters
@@ -16,7 +16,7 @@ function generatePassword() {
   //create variables that will randomly generate characters depending on the criteria
   var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  var numerics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0,1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  var numerics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   var symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "?", "~", "<", ">"];
   //prompt for # of characters 
   var numofCharacters = (prompt("How many characters (between 8 and 128) should your password contain?"));
